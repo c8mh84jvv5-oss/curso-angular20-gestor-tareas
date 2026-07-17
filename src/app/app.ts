@@ -31,6 +31,10 @@ export class App {
     ]);
   }
 
+  eliminar(id: number): void {
+    this.tareas.update((lista) => lista.filter((t) => t.id !== id));
+  }
+
   toggle(id: number): void {
     this.tareas.update((lista) =>
       lista.map((t) => (t.id === id ? { ...t, completada: !t.completada } : t)),

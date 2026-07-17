@@ -59,6 +59,13 @@ li:hover {
   opacity: 0.6;
 }
 
+.eliminar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: auto;
+}
+
 .vacio {
   cursor: default;
   color: #999;

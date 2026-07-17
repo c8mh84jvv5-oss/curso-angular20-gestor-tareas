@@ -18,8 +18,9 @@
       <li (click)="toggle(tarea.id)" [class.hecha]="tarea.completada">
         {{ tarea.titulo }}
         @if (tarea.completada) {
-          <span>Ok</span>
+          <span>✅</span>
         }
+        <button class="eliminar" (click)="eliminar(tarea.id); $event.stopPropagation()">🗑️</button>
       </li>
     } @empty {
       <li>No hay tareas. Agrega una!!</li>
