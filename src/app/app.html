@@ -24,7 +24,9 @@
           <span class="iconoCheck" (click)="taskStore.toggle(tarea.id)" > ☑️  </span> 
           <span>{{ tarea.titulo }} </span> 
         }
-        <button class="eliminar" (click)="taskStore.eliminar(tarea.id); $event.stopPropagation()">🗑️</button>
+        <button class="eliminar" (click)="taskStore.eliminar(tarea.id); $event.stopPropagation()">
+        <span class="iconoCheck">🗑️</span>  
+        </button>
       </li>
     } @empty {
       <li class="sin-tareas">No hay tareas. Agrega una!!</li>
@@ -33,10 +35,9 @@
 </div>
 
     <div class="borrar-tareas">
-      @if(taskStore.completatas() > 0) {
-        <button (click)="taskStore.limpiarCompletadas(); $event.stopPropagation()">Borrar ({{ taskStore.completatas() }}) completadas</button>
-      }
-      
+        <button 
+        [disabled]="taskStore.completatas()<1"
+        (click)="taskStore.limpiarCompletadas (); $event.stopPropagation()">Borrar ({{ taskStore.completatas() }}) completadas</button>
     </div >
     <br>
     <div class="div-block">  
