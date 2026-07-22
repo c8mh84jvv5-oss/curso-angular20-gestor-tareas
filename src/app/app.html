@@ -1,8 +1,7 @@
 <main>
-  <h1>{{ title }}</h1>
-  <p class="contador">Pendientes: {{ taskStore.pendientes() }}</p>
-  <p class="contador">total: {{ taskStore.totalTareas() }}</p>
-
+  
+  <div class="div-block">  
+    <h1>{{ title }}</h1>
   <div class="nueva-tarea">
     <input
       type="text"
@@ -13,20 +12,40 @@
 
     <button (click)="taskStore.agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
   </div>
-
+<div class="div-block">  
   <ul>
     @for (tarea of taskStore.tareas(); track tarea.id) {
-      <li (click)="taskStore.toggle(tarea.id)" [class.hecha]="tarea.completada">
-        {{ tarea.titulo }}
+      <li >
+        
         @if (tarea.completada) {
-          <span>✅</span>
+          <span class="iconoCheck" (click)="taskStore.toggle(tarea.id)" > ✅ </span>
+          <span class="hecha"> {{ tarea.titulo }} </span> 
+        }@else {
+          <span class="iconoCheck" (click)="taskStore.toggle(tarea.id)" > ☑️  </span> 
+          <span>{{ tarea.titulo }} </span> 
         }
         <button class="eliminar" (click)="taskStore.eliminar(tarea.id); $event.stopPropagation()">🗑️</button>
       </li>
     } @empty {
-      <li>No hay tareas. Agrega una!!</li>
+      <li class="sin-tareas">No hay tareas. Agrega una!!</li>
     }
   </ul>
+</div>
+
+    <div class="borrar-tareas">
+      @if(taskStore.completatas() > 0) {
+        <button (click)="taskStore.limpiarCompletadas(); $event.stopPropagation()">Borrar ({{ taskStore.completatas() }}) completadas</button>
+      }
+      
+    </div >
+    <br>
+    <div class="div-block">  
+      <p class="consola">
+        Total: {{ taskStore.totalTareas() }},
+        Pendientes: {{ taskStore.pendientes() }}, 
+        Competatas: {{ taskStore.completatas() }}
+  </div>
+</div>
 </main>
 
 <router-outlet />
