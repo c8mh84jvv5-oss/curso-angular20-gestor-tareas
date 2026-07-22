@@ -56,9 +56,9 @@ constructor() {
             }
         }
         return [
-            { id:  Date.now(), titulo: 'Aprender angular', completada: false },
-            { id:  Date.now(), titulo: 'Construir un proyecto nuevo', completada: false },
-            { id:  Date.now(), titulo: 'Dominar signals', completada: true },
+            { id:  Date.now() + 1, titulo: 'Aprender angular', completada: false },
+            { id:  Date.now() + 2, titulo: 'Construir un proyecto nuevo', completada: false },
+            { id:  Date.now() + 3, titulo: 'Dominar signals', completada: true },
         ];
     }
 }
