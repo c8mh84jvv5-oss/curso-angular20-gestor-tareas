@@ -25,7 +25,7 @@
           <span>{{ tarea.titulo }} </span> 
         }
         <button class="eliminar" (click)="taskStore.eliminar(tarea.id); $event.stopPropagation()">
-        <span class="iconoCheck">🗑️</span>  
+        <span class="iconoDelte">🗑️</span>  
         </button>
       </li>
     } @empty {

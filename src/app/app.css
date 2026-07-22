@@ -58,6 +58,19 @@ li:hover {
   background: #e6f3f4;
 }
 
+li:has(.iconoCheck:hover) {
+  background: #e5f7ff;
+  border-left: 4px solid #1c77ff;
+
+}
+
+
+li:has(.iconoDelte:hover) {
+  background: #d81b601f;
+  border-right: 4px solid #d81b60;
+
+}
+
 .hecha {
   text-decoration: line-through;
   opacity: 0.6;
@@ -137,6 +150,23 @@ li:hover {
 
 }
 
+
+
+.iconoDelte {
+  margin-right: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.iconoDelte:hover {
+  transform: scale(1.2);
+
+}
 .sin-tareas {
     background: #fcffe3;
 
