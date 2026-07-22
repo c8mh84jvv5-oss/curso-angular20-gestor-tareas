@@ -48,15 +48,17 @@ constructor() {
     }
 
     private cargar(): Task[] {
-    const guardadas = localStorage.getItem(STORAGE_KEY);
-
-    if (guardadas) {
-      return JSON.parse(guardadas);
+        const guardadas = localStorage.getItem(STORAGE_KEY);
+        if (guardadas) {
+            const tareas = JSON.parse(guardadas) as Task[];
+            if (tareas.length > 0) {
+            return tareas;
+            }
+        }
+        return [
+            { id:  Date.now(), titulo: 'Aprender angular', completada: false },
+            { id:  Date.now(), titulo: 'Construir un proyecto nuevo', completada: false },
+            { id:  Date.now(), titulo: 'Dominar signals', completada: true },
+        ];
     }
-    return [
-      { id: 1, titulo: 'Aprender angular', completada: false },
-      { id: 2, titulo: 'Construir un proyecto nuevo', completada: false },
-      { id: 3, titulo: 'Dominar signals', completada: true },
-    ];
-  }
 }
