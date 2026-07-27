@@ -54,34 +54,6 @@ li {
   overflow-wrap: anywhere;
 }
 
-li:hover {
-  background: #e6f3f4;
-}
-
-li:has(.iconoCheck:hover) {
-  background: #e5f7ff;
-  border-left: 4px solid #1c77ff;
-
-}
-
-
-li:has(.iconoDelte:hover) {
-  background: #d81b601f;
-  border-right: 4px solid #d81b60;
-
-}
-
-.hecha {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.eliminar {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  margin-left: auto;
-}
 
 .vacio {
   cursor: default;

@@ -15,19 +15,11 @@
 <div class="div-block">  
   <ul>
     @for (tarea of taskStore.tareas(); track tarea.id) {
-      <li >
-        
-        @if (tarea.completada) {
-          <span class="iconoCheck" (click)="taskStore.toggle(tarea.id)" > ✅ </span>
-          <span class="hecha"> {{ tarea.titulo }} </span> 
-        }@else {
-          <span class="iconoCheck" (click)="taskStore.toggle(tarea.id)" > ☑️  </span> 
-          <span>{{ tarea.titulo }} </span> 
-        }
-        <button class="eliminar" (click)="taskStore.eliminar(tarea.id); $event.stopPropagation()">
-        <span class="iconoDelte">🗑️</span>  
-        </button>
-      </li>
+      <app-task-item
+        [task]= "tarea"
+        (toggle)= "taskStore.toggle( $event)"
+        (removed)="taskStore.eliminar($event)" />
+
     } @empty {
       <li class="sin-tareas">No hay tareas. Agrega una!!</li>
     }

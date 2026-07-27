@@ -2,9 +2,11 @@ import { Component, computed, signal,inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Task } from './features/tareas/task';
 import { TaskStore } from './features/tareas/task-store';
+import { TaskItem } from './share/ui/task-item/task-item';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,TaskItem],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -1,0 +1,12 @@
+<li >
+    @if (task().completada) {
+        <span class="iconoCheck" (click)="toggle.emit(task().id)" > ✅ </span>
+        <span class="hecha"> {{ task().titulo }} </span> 
+    }@else {
+        <span class="iconoCheck" (click)="toggle.emit(task().id)" > ☑️  </span> 
+        <span>{{ task().titulo }} </span> 
+    }
+    <button class="eliminar" (click)="removed.emit(task().id); $event.stopPropagation()">
+    <span class="iconoDelte">🗑️</span>  
+    </button>
+</li>
