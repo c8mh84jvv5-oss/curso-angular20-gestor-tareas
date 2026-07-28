@@ -2,16 +2,9 @@
   
   <div class="div-block">  
     <h1>{{ title }}</h1>
-  <div class="nueva-tarea">
-    <input
-      type="text"
-      #inputTarea
-      placeholder="Nueva Tarea"
-      (keyup.enter)="taskStore.agregar(inputTarea.value); inputTarea.value = ''"
-    />
-
-    <button (click)="taskStore.agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
-  </div>
+  <app-task-form
+  (agregar)="taskStore.agregar($event)"></app-task-form>
+  
 <div class="div-block">  
   <ul>
     @for (tarea of taskStore.tareas(); track tarea.id) {

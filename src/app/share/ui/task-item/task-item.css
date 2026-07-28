@@ -1,11 +1,14 @@
-li {
-  padding: 0.6rem 0.75rem;
+
+ li {
+  padding: 0.3rem 0.75rem;
   border: 1px solid #eee;
   border-radius: 6px;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
+  margin-bottom: 0.2rem;
   display: flex;
   justify-content: space-between;
+  background: #fafafa;
+  align-items: center;
+  overflow-wrap: anywhere;
 }
 
 li:hover {
@@ -35,4 +38,36 @@ li:has(.iconoDelte:hover) {
   background: transparent;
   cursor: pointer;
   margin-left: auto;
+}
+
+
+.iconoCheck {
+  margin-right: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.iconoCheck:hover {
+  transform: scale(1.2);
+
+}
+
+.iconoDelte {
+  margin-right: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.iconoDelte:hover {
+  transform: scale(1.2);
 }
