@@ -1,4 +1,4 @@
-import { Component,output } from '@angular/core';
+import { Component,output,input } from '@angular/core';
 
 
 @Component({
@@ -10,5 +10,14 @@ import { Component,output } from '@angular/core';
 export class TaskForm {
 
   agregar = output<string>();
+
+  agregarTarea(input: HTMLInputElement): void {
+    const tarea = input.value;
+      if (!tarea) {
+      return;
+      }
+    this.agregar.emit(input.value);
+    input.value = '';
+  }
 
 }

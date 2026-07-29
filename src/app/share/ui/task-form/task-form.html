@@ -3,9 +3,9 @@
         type="text"
         #inputTarea
         placeholder="Nueva Tarea"
-        (keyup.enter)="agregar.emit(inputTarea.value); inputTarea.value = ''"
+        (keyup.enter)="agregarTarea(inputTarea)"
         />
 
-    <button (click)="agregar.emit(inputTarea.value); inputTarea.value = ''">Agregar</button>
+    <button (click)="agregarTarea(inputTarea)">Agregar</button>
 
 </div>

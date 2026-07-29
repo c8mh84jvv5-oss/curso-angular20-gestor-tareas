@@ -4,10 +4,10 @@ import { Task } from './features/tareas/task';
 import { TaskStore } from './features/tareas/task-store';
 import { TaskItem } from './share/ui/task-item/task-item';
 import { TaskForm } from './share/ui/task-form/task-form';
-
+import { Contadores } from './share/ui/contadores/contadores';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,TaskItem, TaskForm],
+  imports: [RouterOutlet,TaskItem, TaskForm,Contadores],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

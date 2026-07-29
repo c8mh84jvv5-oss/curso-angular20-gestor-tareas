@@ -25,12 +25,8 @@
         (click)="taskStore.limpiarCompletadas (); $event.stopPropagation()">Borrar ({{ taskStore.completatas() }}) completadas</button>
     </div >
     <br>
-    <div class="div-block">  
-      <p class="consola">
-        Total: {{ taskStore.totalTareas() }},
-        Pendientes: {{ taskStore.pendientes() }}, 
-        Competatas: {{ taskStore.completatas() }}
-  </div>
+    
+          <app-contadores></app-contadores>
 </div>
 </main>
 
