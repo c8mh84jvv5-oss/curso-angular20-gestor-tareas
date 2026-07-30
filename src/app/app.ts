@@ -15,4 +15,15 @@ export class App {
   protected readonly title = 'Gestor de tareas';
 taskStore = inject(TaskStore);
   
+
+animar = signal(false);
+borrarCompletadas(event: MouseEvent) {
+  this.taskStore.limpiarCompletadas();
+  event.stopPropagation();
+  this.animar.set(true);
+  setTimeout(() => {
+    this.animar.set(false);
+  }, 800); // duración de la animación
+}
+
 }

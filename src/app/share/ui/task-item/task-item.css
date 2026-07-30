@@ -9,6 +9,7 @@
   background: #fafafa;
   align-items: center;
   overflow-wrap: anywhere;
+  user-select: none;
 }
 
 li:hover {

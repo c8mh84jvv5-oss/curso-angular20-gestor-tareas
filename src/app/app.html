@@ -1,5 +1,4 @@
-<main>
-  
+<main >
   <div class="div-block">  
     <h1>{{ title }}</h1>
   <app-task-form
@@ -20,9 +19,17 @@
 </div>
 
     <div class="borrar-tareas">
-        <button 
-        [disabled]="taskStore.completatas()<1"
-        (click)="taskStore.limpiarCompletadas (); $event.stopPropagation()">Borrar ({{ taskStore.completatas() }}) completadas</button>
+        <button
+
+  [class.shake-bottom]="animar()"
+
+  [disabled]="taskStore.completatas() < 1"
+
+  (click)="borrarCompletadas($event)">
+
+  Borrar ({{ taskStore.completatas() }}) completadas
+
+</button>
     </div >
     <br>
     
